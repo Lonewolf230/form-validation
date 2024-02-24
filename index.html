@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="./styles.css" rel="stylesheet">
+    <title>Student Form Validation</title>
+    <script defer src="./index.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Pragati+Narrow:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <h1 class="pragati-narrow-regular" style="font-weight: 800;">Student Validation Form</h1>
+    <form id="info" onsubmit="return checkForm()"  class="pragati-narrow-regular" method="post">
+        <label for="name">Name:   </label>
+        <input type="text" id="name" placeholder="Enter your Name" required><br>
+        <label  for="e-mail">E-mail:</label>
+        <input type="email" id="e-mail" placeholder="Enter your e-mail" required><br>
+        <label for="Country" >Select a country:</label><br>
+        <select id="Country" onclick="return codegen()" required>
+            <option name="india" id="91">India</option>
+            <option name="pak" id="92">Pakistan</option>
+            <option name="nz" id="64">New Zealand</option>
+            <option name="aus" id="61">Australia</option>
+            <option name="us" id="1">United States</option>
+        </select><br>
+
+        <label for="ph">Phone Number</label><br>
+        <input id="code" type="text" placeholder="Country code" onclick="return codegen()"><input type="text" id="ph"><br>
+        <label for="Program">Select a Program:</label><br>
+        <select id="Program" required>
+            <option>B.Tech</option>
+            <option>M.Tech</option>
+            <option>BBA</option>
+            <option>BCA</option>
+            <option>B.Arch</option>
+            <option>B.Sc</option>
+        </select><br>
+        <div class="file">
+        <div>    
+        <label for="10th" style="color: yellow; padding-right: 20px;">Upload 10th MarkSheet</label>
+        <input id="10th" type="file" accept=".pdf" onchange="return sizecheck()"><br>
+        </div>
+        <div>
+        <label for="12th" style="color: yellow; padding-right: 20px;">Upload 12th MarkSheet</label>
+        <input id="12th" type="file" accept=".pdf" onchange="return sizecheck()"><br>
+        </div>
+        </div>
+        <p >English Proficiency Tests</p><br>
+        <div class="ept">
+        <div>
+        <input id="toefl" type="radio" name="exams" onclick="return dispmark()">
+        <label for="toefl" >TOEFL</label>
+        </div>
+        <div>
+        <input id="ielts" type="radio" name="exams" onclick="return dispmark()">
+        <label for="ielts" >IELTS</label><br>
+        </div>
+        </div>
+        <div class="score">
+        <div>
+        <input type="number" min="0" id="score" placeholder="Enter your score"><br>        
+        </div>
+        </div>
+        <p >Terms and Conditions</p><br>
+        <input type="checkbox" id="t&c1"><label>By submitting this form you are agreeing to share your personal information with our institution</label><br>
+        <input type="checkbox" id="t&c2"><label>Make sure that you are agreeing with the privacy policy of our institute</label><br>
+        <div class="buttons">
+        <input type="submit" id="submit">
+        <input type="reset" id="reset" onclick="return removemark()">
+        </div>
+    </form>
+    
+</body>
+</html>
